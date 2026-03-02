@@ -7,48 +7,13 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="hud">
-    <h1>Abyssal Mentor</h1>
-    <p>Explora el arrecife, aprende biología marina y sigue a <strong>Nemo</strong>, tu pez payaso ayudante.</p>
-    <div class="stats">
-      <span id="score">Conocimiento: 0</span>
-      <span id="oxygen">Oxígeno: 100%</span>
-    </div>
-  </header>
+  <div id="marine-game"></div>
 
-  <main>
-    <section id="game-area" aria-label="Zona de juego submarina">
-      <div id="player" aria-label="Buzo">🤿</div>
-      <div id="helper" aria-label="Pez payaso ayudante">🐠</div>
-      <div class="organism" data-id="coral" style="left: 12%; top: 22%;">🪸</div>
-      <div class="organism" data-id="turtle" style="left: 68%; top: 30%;">🐢</div>
-      <div class="organism" data-id="jellyfish" style="left: 38%; top: 62%;">🪼</div>
-      <div class="organism" data-id="kelp" style="left: 78%; top: 70%;">🌿</div>
-    </section>
+  <script type="module">
+    import { initMarineGame } from "./game.js";
 
-    <aside class="panel">
-      <h2>Misiones</h2>
-      <ul>
-        <li>Muévete con <kbd>WASD</kbd> o flechas.</li>
-        <li>Acércate a un organismo para estudiarlo.</li>
-        <li>Responde preguntas para ganar conocimiento.</li>
-      </ul>
-      <p id="hint">Nemo: «¡Explora el coral para empezar!»</p>
-    </aside>
-  </main>
-
-  <dialog id="quiz-modal">
-    <form method="dialog" id="quiz-form">
-      <h3 id="quiz-title"></h3>
-      <p id="quiz-fact"></p>
-      <fieldset id="quiz-options"></fieldset>
-      <menu>
-        <button value="cancel">Cerrar</button>
-        <button id="submit-answer" value="default">Responder</button>
-      </menu>
-    </form>
-  </dialog>
-
-  <script src="game.js"></script>
+    const root = document.getElementById("marine-game");
+    initMarineGame(root);
+  </script>
 </body>
 </html>

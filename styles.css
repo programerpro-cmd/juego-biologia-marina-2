@@ -18,6 +18,10 @@ body {
   background: radial-gradient(circle at 20% 20%, #1c6f9e, var(--bg1) 50%), linear-gradient(140deg, var(--bg1), var(--bg2));
 }
 
+#marine-game {
+  min-height: 100vh;
+}
+
 .hud {
   padding: 1rem 1.5rem;
   background: rgba(1, 16, 27, 0.65);
@@ -40,7 +44,7 @@ main {
   padding: 1rem;
 }
 
-#game-area {
+.game-area {
   position: relative;
   min-height: 68vh;
   border-radius: 16px;
@@ -52,21 +56,21 @@ main {
     linear-gradient(180deg, rgba(20, 97, 145, 0.7), rgba(2, 25, 42, 0.95));
 }
 
-#player,
-#helper,
+.player,
+.helper,
 .organism {
   position: absolute;
   user-select: none;
   transition: transform 0.12s ease;
 }
 
-#player {
+.player {
   left: 50%;
   top: 50%;
   font-size: 2rem;
 }
 
-#helper {
+.helper {
   left: 54%;
   top: 54%;
   font-size: 1.7rem;
@@ -89,7 +93,7 @@ main {
   padding: 1rem;
 }
 
-#hint {
+[data-ui="hint"] {
   margin-top: 1rem;
   color: #9ceeff;
 }
