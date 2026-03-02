@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abyssal Mentor: Biología Marina</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="marine-game"></div>
+
+  <script type="module">
+    import { initMarineGame } from "./game.js";
+
+    const root = document.getElementById("marine-game");
+    initMarineGame(root);
+  </script>
+</body>
+</html>
