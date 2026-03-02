@@ -1,0 +1,134 @@
+:root {
+  color-scheme: dark;
+  --bg1: #03243e;
+  --bg2: #0d4d77;
+  --accent: #4fd8ff;
+  --panel: rgba(4, 25, 41, 0.85);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: #e8f7ff;
+  background: radial-gradient(circle at 20% 20%, #1c6f9e, var(--bg1) 50%), linear-gradient(140deg, var(--bg1), var(--bg2));
+}
+
+.hud {
+  padding: 1rem 1.5rem;
+  background: rgba(1, 16, 27, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.hud h1 { margin: 0; }
+.hud p { margin: 0.25rem 0 0.75rem; }
+
+.stats {
+  display: flex;
+  gap: 1.2rem;
+  font-weight: 700;
+}
+
+main {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 320px;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+#game-area {
+  position: relative;
+  min-height: 68vh;
+  border-radius: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(79, 216, 255, 0.2), transparent 18%),
+    radial-gradient(circle at 75% 60%, rgba(13, 171, 140, 0.2), transparent 20%),
+    linear-gradient(180deg, rgba(20, 97, 145, 0.7), rgba(2, 25, 42, 0.95));
+}
+
+#player,
+#helper,
+.organism {
+  position: absolute;
+  user-select: none;
+  transition: transform 0.12s ease;
+}
+
+#player {
+  left: 50%;
+  top: 50%;
+  font-size: 2rem;
+}
+
+#helper {
+  left: 54%;
+  top: 54%;
+  font-size: 1.7rem;
+}
+
+.organism {
+  font-size: 2rem;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(79, 216, 255, 0.4));
+}
+
+.organism.active {
+  transform: scale(1.25);
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+#hint {
+  margin-top: 1rem;
+  color: #9ceeff;
+}
+
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 1rem;
+  width: min(95vw, 460px);
+  background: #042136;
+  color: #e8f7ff;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0.75rem 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+label {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+button {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: #09517f;
+  color: white;
+  border-radius: 8px;
+  padding: 0.45rem 0.7rem;
+}
+
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; }
+}
